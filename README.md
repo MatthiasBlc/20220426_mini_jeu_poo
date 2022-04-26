@@ -2,8 +2,6 @@
 
 ## 1/ liste des applications:
 
-lib/
-
 app.rb
 
 app_2.rb
