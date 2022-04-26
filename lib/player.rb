@@ -62,16 +62,18 @@ class HumanPlayer < Player
   end
 
   def search_health_pack
-    dice = rand(1..6)
-    case dice
+    roll = rand(1..6)
+    case roll
     when 1
       puts  "Tu n'as rien trouvé... "
-    when 2..5
-      (@life_points += 50)> 100 ? @life_points = 100 : @life_points += 50 
+    when (2..5)
+      (@life_points += 50)> 100 ? @life_points = 100 : @life_points 
       puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+      puts "#{@name} a maintenant #{@life_points} points de vie"
     when 6
-      (@life_points += 80)> 100 ? @life_points = 100 : @life_points += 80 
+      (@life_points += 80)> 100 ? @life_points = 100 : @life_points
       puts "Waow, tu as trouvé un pack de +80 points de vie !"
+      puts "#{@name} a maintenant #{@life_points} points de vie"
     else
       puts "error"
     end

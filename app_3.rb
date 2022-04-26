@@ -17,20 +17,18 @@ puts ">"
 name = gets.chomp
 my_game = Game.new(name)
 
-#  Initiation
-
 # Battle 
-input_state = true
+input_state = true                # To check and change
 while my_game.is_still_ongoing?
-  while input_state == true
-    puts my_game.show_players 
+  my_game.new_players_in_sight
+  while input_state               # To check and change
+    my_game.show_players 
 
     # choice
     puts my_game.menu
     puts ">"
     input = gets.chomp
     input.to_i == 0 ? input = input : input = input.to_i
-    puts my_game.menu_choice(input)
     if my_game.menu_choice(input) == "Try another input"
       input_state = true 
       else
